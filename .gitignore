@@ -60,11 +60,8 @@ captures/
 .idea/dictionaries
 .idea/libraries
 
-<<<<<<< HEAD
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
-
-=======
 # Keystore files
 *.jks
 
@@ -74,12 +71,10 @@ captures/
 # Google Services (e.g. APIs or Firebase)
 google-services.json
 
->>>>>>> 4d8f8b2bbd6b407be64ba6f21c8bd596cd61fe52
 # Freeline
 freeline.py
 freeline/
 freeline_project_description.json
-<<<<<<< HEAD
 
 ### Android Patch ###
 gen-external-apklibs
@@ -97,6 +92,8 @@ gen-external-apklibs
 
 # Gradle files
 .gradle
+.gradle/
+build/
 
 # Signing files
 .signing/
