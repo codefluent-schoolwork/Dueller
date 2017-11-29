@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">DuellerTest</string>
     <string name="title_activity_login">Sign in</string>
 
@@ -26,4 +27,22 @@
     <string name="sign_up_text">Sign Up!</string>
     <string name="add_item">Add New Item</string>
     <string name="action_logout">Logout</string>
+
+    <!-- Duel Detail -->
+    <string name="back">Back</string>
+    <string name="VS">VS.</string>
+
+    <string name="challenger1_label">Challenger 1</string>
+    <string name="challenger2_label">Challenger 2</string>
+
+    <string name="details">Details:</string>
+
+    <string name="comments">Comments:</string>
+    <string name="comment_placeholder">Start typing here...</string>
+    <string name="submit">Submit</string>
+
+    <string name="bragging_claim_label">I'm the best at...</string>
+    <string name="location">Location:</string>
+    <string name="post">Post</string>
+
 </resources>
