@@ -11,10 +11,10 @@
     <string name="details">Details:</string>
 
     <string name="comments">Comments:</string>
-    <string name="comment_placeholder">Start typing here...</string>
+    <string name="comment_placeholder">Start talking trash here...</string>
     <string name="submit">Submit</string>
 
-    <string name="bragging_claim_label">I'm the best at...</string>
+    <string name="bragging_claim_label">I claim bragging rights for...</string>
     <string name="location">Location:</string>
     <string name="post">Post</string>
 

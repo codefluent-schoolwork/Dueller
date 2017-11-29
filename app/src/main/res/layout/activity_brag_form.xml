@@ -22,7 +22,7 @@
 
     <EditText
         android:id="@+id/skillField"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:ems="10"
@@ -41,14 +41,14 @@
         android:labelFor="@+id/locationField"
         android:text="@string/location"
         android:textColor="@android:color/black"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/skillField" />
 
     <EditText
         android:id="@+id/locationField"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginTop="1dp"
         android:ems="10"
@@ -73,13 +73,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/locationField" />
-
-    <android.support.constraint.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="20dp" />
 
 
 </android.support.constraint.ConstraintLayout>
