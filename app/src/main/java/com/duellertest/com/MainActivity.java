@@ -33,12 +33,13 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
+        // log out user and return to log in view.
         if (id == R.id.action_logout) {
-            return true;
+            mFirebaseAuth.signOut();
+            loadLogInView();
         }
 
-        return false;
+        return super.onOptionsItemSelected(item);
     }
 
     private void loadLogInView() {
