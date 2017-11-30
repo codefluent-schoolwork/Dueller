@@ -39,6 +39,7 @@ public class SignUpActivity extends AppCompatActivity {
                 String password = passwordEditText.getText().toString();
                 String email = emailEditText.getText().toString();
 
+
                 password.trim();
                 email.trim();
 
@@ -62,6 +63,7 @@ public class SignUpActivity extends AppCompatActivity {
                                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
 
+                                        createProfilePic();
                                         startActivity(intent);
                                     } else {
                                         AlertDialog.Builder builder = new AlertDialog.Builder(SignUpActivity.this);
@@ -77,5 +79,9 @@ public class SignUpActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void createProfilePic() {
+
     }
 }
