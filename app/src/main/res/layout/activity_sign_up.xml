@@ -3,12 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/signup_dueller"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@drawable/signup_dueller"
-    tools:context=".SignUpActivity" >
+    tools:context=".SignUpActivity">
 
     <EditText
         android:id="@+id/name"
@@ -16,7 +16,10 @@
         android:layout_height="wrap_content"
         android:layout_above="@+id/emailField"
         android:layout_alignLeft="@+id/emailField"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
         android:layout_alignStart="@+id/emailField"
+        android:layout_marginBottom="11dp"
         android:ems="10"
         android:hint="@string/name_hint"
         android:inputType="text|textPersonName">
@@ -35,9 +38,7 @@
         android:layout_centerVertical="true"
         android:ems="10"
         android:hint="@string/email_hint"
-        android:inputType="textEmailAddress">
-
-    </EditText>
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/passwordField"
@@ -54,10 +55,22 @@
         android:id="@+id/signupButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="56dp"
+        android:layout_below="@+id/uploadButton"
+        android:layout_marginTop="14dp"
         android:text="@string/sign_up_button_label" />
+
+    <Button
+        android:id="@+id/uploadButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/passwordField"
+        android:layout_marginEnd="49dp"
+        android:layout_marginRight="49dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/upload_button_label" />
 
 </RelativeLayout>
