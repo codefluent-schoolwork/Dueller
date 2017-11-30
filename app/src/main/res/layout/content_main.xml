@@ -1,39 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainActivity"
-    tools:showIn="@layout/activity_main"
-    android:orientation="vertical">
+    tools:context="com.ivchen.flyershare.MainActivity"
+    android:background="@drawable/login_page">
 
-    <ListView
-        android:id="@+id/listView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-    </ListView>
-
-    <LinearLayout
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="bottom">
-        <EditText
-            android:id="@+id/todoText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/addButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/add_item"/>
-    </LinearLayout>
+        android:id="@+id/usernameField"
+        android:layout_marginTop="190dp"
+        android:background="#ffffff"
+        android:hint="username / email"
+        android:textAlignment="center"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:singleLine="true" />
 
-</LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/passwordField"
+        android:layout_below="@+id/usernameField"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="23dp"
+        android:background="#ffffff"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:hint="password"
+        android:textAlignment="center" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:id="@+id/loginButton"
+        android:layout_marginTop="32dp"
+        android:layout_below="@+id/passwordField"
+        android:layout_alignLeft="@+id/passwordField"
+        android:layout_alignStart="@+id/passwordField"
+        android:onClick="onClickLogin"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sign-Up"
+        android:id="@+id/signUpButton"
+        android:paddingRight="10dp"
+        android:layout_alignTop="@+id/loginButton"
+        android:layout_alignRight="@+id/passwordField"
+        android:layout_alignEnd="@+id/passwordField"
+        android:onClick="onClickSignUp"/>
+
+</RelativeLayout>

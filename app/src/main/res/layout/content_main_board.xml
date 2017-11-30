@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.ivchen.flyershare.MainBoardActivity"
+    android:background="@drawable/main_page">
+
+    <RelativeLayout
+        android:id="@+id/navbar"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp">
+
+        <ImageButton
+            android:id="@+id/createNewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="45dp"
+            android:layout_toLeftOf="@+id/favoriteButton"
+            android:src="@drawable/create_new"
+            android:background="@null"
+            android:onClick="onClickCreate"/>
+
+        <ImageButton
+            android:id="@+id/favoriteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:src="@drawable/favorite"
+            android:background="@null"
+            android:onClick="onClickFavorite"/>
+
+        <ImageButton
+            android:id="@+id/trashButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="45dp"
+            android:layout_toRightOf="@+id/favoriteButton"
+            android:src="@drawable/trash"
+            android:background="@null"
+            android:onClick="onClickTrash"/>
+    </RelativeLayout>
+
+
+    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnWidth="90dp"
+        android:numColumns="auto_fit"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:stretchMode="columnWidth"
+        android:gravity="center"
+        android:smoothScrollbar="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="105dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/footer"
+        android:padding="4dp"
+        android:background="#FF666666"/>
+
+
+    <ImageView
+        android:id="@+id/expanded_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/app_name"
+        android:visibility="invisible"/>
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log out"
+        android:id="@+id/logOutButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="onClickLogOut"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Help"
+        android:id="@+id/helpButton"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="onClickHelp"/>
+
+
+</RelativeLayout>

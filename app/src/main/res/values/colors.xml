@@ -3,6 +3,5 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="dueller_purple">#94569b</color>
-    <color name="dueller_yellow">#ffed4e</color>
+    <color name="navbar_bg">#535353</color>
 </resources>
