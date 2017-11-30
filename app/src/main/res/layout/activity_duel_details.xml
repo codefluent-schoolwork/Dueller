@@ -14,7 +14,7 @@
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
         android:background="@color/dueller_purple"
-        android:elevation="5dp"
+        android:elevation="0dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/back"
         android:textColor="@android:color/white"
@@ -223,6 +223,7 @@
                 android:layout_marginEnd="33dp"
                 android:layout_marginTop="2dp"
                 android:background="@color/dueller_purple"
+                android:elevation="0dp"
                 android:fontFamily="sans-serif-smallcaps"
                 android:text="@string/submit"
                 android:textColor="@android:color/white"
@@ -234,6 +235,16 @@
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
+
+    <View
+        android:id="@+id/logodivider"
+        android:layout_width="70dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="3dp"
+        android:background="@color/dueller_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/logo" />
 
     <ImageView
         android:id="@+id/logo"
@@ -247,5 +258,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView"
         app:srcCompat="@drawable/dueller_logo" />
+
+    <View
+        android:id="@+id/logodivider2"
+        android:layout_width="70dp"
+        android:layout_height="1dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginStart="3dp"
+        android:background="@color/dueller_purple"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/logo" />
 
 </android.support.constraint.ConstraintLayout>
