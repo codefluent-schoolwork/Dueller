@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/FlyerShareMain.iml" filepath="$PROJECT_DIR$/FlyerShareMain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Dueller.iml" filepath="$PROJECT_DIR$/Dueller.iml" />
+      <module fileurl="file://C:\Users\Lawrence Chen\Documents\GitHub\Dueller\FlyerShareMain.iml" filepath="C:\Users\Lawrence Chen\Documents\GitHub\Dueller\FlyerShareMain.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/firebase-client-android-2.5.2/firebase-client-android-2.5.2.iml" filepath="$PROJECT_DIR$/firebase-client-android-2.5.2/firebase-client-android-2.5.2.iml" />
     </modules>

@@ -6,7 +6,35 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.ivchen.flyershare.MainBoardActivity"
-    android:background="@drawable/main_page">
+    android:background="@drawable/main_dueller">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".MainActivity" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            />
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginBottom="50dp"
+            android:layout_marginTop="60dp"></ListView>
+
+    </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/navbar"
@@ -22,7 +50,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="45dp"
             android:layout_toLeftOf="@+id/favoriteButton"
-            android:src="@drawable/create_new"
+            android:src="@drawable/makeclaim"
             android:background="@null"
             android:onClick="onClickCreate"/>
 
@@ -32,7 +60,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/favorite"
+            android:src="@drawable/spectate2"
             android:background="@null"
             android:onClick="onClickFavorite"/>
 
@@ -46,60 +74,47 @@
             android:src="@drawable/trash"
             android:background="@null"
             android:onClick="onClickTrash"/>
+
     </RelativeLayout>
-
-
-    <GridView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/gridview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnWidth="90dp"
-        android:numColumns="auto_fit"
-        android:verticalSpacing="10dp"
-        android:horizontalSpacing="10dp"
-        android:stretchMode="columnWidth"
-        android:gravity="center"
-        android:smoothScrollbar="true"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="105dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginLeft="20dp" />
-
-    <TextView
-        android:id="@+id/footer"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/footer"
-        android:padding="4dp"
-        android:background="#FF666666"/>
 
 
     <ImageView
         android:id="@+id/expanded_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
         android:contentDescription="@string/app_name"
-        android:visibility="invisible"/>
+        android:visibility="invisible" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp" />
+
     <Button
+        android:id="@+id/logOutButton"
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Log out"
-        android:id="@+id/logOutButton"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="onClickLogOut"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="15dp"
+        android:onClick="onClickLogOut"
+        android:text="Log out" />
 
     <Button
+        android:id="@+id/helpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Help"
-        android:id="@+id/helpButton"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onClickHelp"/>
+        android:layout_marginTop="15dp"
+        android:layout_toLeftOf="@+id/logOutButton"
+        android:layout_toStartOf="@+id/logOutButton"
+        android:onClick="onClickHelp"
+        android:text="Help" />
 
 
 </RelativeLayout>
