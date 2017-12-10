@@ -54,16 +54,13 @@
         </activity>
         <activity
             android:name=".BragFormActivity"
+            android:label="BragFormActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".DuelDetailsActivity"
+            android:label="DuelDetailsActivity"
             android:windowSoftInputMode="stateHidden"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
