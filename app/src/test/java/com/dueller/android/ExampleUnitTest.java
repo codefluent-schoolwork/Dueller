@@ -1,4 +1,4 @@
-package com.ivchen.flyershare;
+package com.dueller.android;
 
 import org.junit.Test;
 

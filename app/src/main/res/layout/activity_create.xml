@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ivchen.flyershare.CreateActivity"
+    tools:context="com.dueller.android.CreateActivity"
     android:background="@drawable/create_page">
 
     <include layout="@layout/content_create" />

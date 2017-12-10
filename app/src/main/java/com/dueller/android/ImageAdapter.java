@@ -1,4 +1,4 @@
-package com.ivchen.flyershare;
+package com.dueller.android;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -9,14 +9,11 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
-import android.widget.ListAdapter;
-import android.widget.Toast;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
-import com.ivchen.flyershare.MainBoardActivity;
 
 
 /**

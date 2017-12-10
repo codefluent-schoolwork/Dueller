@@ -10,7 +10,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.ivchen.flyershare"
+        applicationId "com.dueller.android"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -27,8 +27,14 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+    compile 'com.google.firebase:firebase-auth:11.6.0'
+    compile 'com.google.firebase:firebase-core:11.6.0'
+    compile 'com.google.firebase:firebase-messaging:11.6.0'
+    compile 'com.google.firebase:firebase-firestore:11.6.0'
     compile 'com.android.support:appcompat-v7:23.2.1'
     compile 'com.android.support:design:23.2.1'
-    compile 'com.firebase:firebase-client-android:2.5.2+'
 
 }
+
+
+apply plugin: 'com.google.gms.google-services'

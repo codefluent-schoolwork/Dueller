@@ -1,4 +1,4 @@
-package com.ivchen.flyershare;
+package com.dueller.android;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

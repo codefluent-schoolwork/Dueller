@@ -1,4 +1,4 @@
-package com.ivchen.flyershare;
+package com.dueller.android;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -6,16 +6,10 @@ import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.view.ContextMenu;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -29,19 +23,13 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.firebase.client.ChildEventListener;
-import com.firebase.client.DataSnapshot;
 import android.view.MotionEvent;
 import android.view.GestureDetector;
 import android.support.v4.view.GestureDetectorCompat;
 
 import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.Query;
-import com.firebase.client.ValueEventListener;
 
 public class MainBoardActivity extends AppCompatActivity implements GestureDetector.OnGestureListener,
         GestureDetector.OnDoubleTapListener{
@@ -74,7 +62,6 @@ public class MainBoardActivity extends AppCompatActivity implements GestureDetec
         super.onCreate(savedInstanceState);
         String [] mThumbIds2 = new String [mThumbIds.length];
         setContentView(R.layout.activity_main_board);
-        Firebase.setAndroidContext(this);
         this.gestureDetector = new GestureDetectorCompat(this,this);
         gestureDetector.setOnDoubleTapListener(this);
         detector = new GestureDetector(this, new SwipeGestureDetector());

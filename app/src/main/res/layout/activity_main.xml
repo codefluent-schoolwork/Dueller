@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.ivchen.flyershare.MainActivity">
+    tools:context="com.dueller.android.MainActivity">
 
     <include layout="@layout/content_main" />
 

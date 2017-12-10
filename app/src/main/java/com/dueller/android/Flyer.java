@@ -1,4 +1,4 @@
-package com.ivchen.flyershare;
+package com.dueller.android;
 
 /**
  * Created by Daniel on 4/12/2016.

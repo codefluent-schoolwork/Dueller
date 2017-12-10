@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ivchen.flyershare.FavoritesActivity"
+    tools:context="com.dueller.android.FavoritesActivity"
     tools:showIn="@layout/activity_favorites"
     android:background="@drawable/favorite_page">
 

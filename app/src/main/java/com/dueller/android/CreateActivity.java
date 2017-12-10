@@ -1,9 +1,7 @@
-package com.ivchen.flyershare;
+package com.dueller.android;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -13,14 +11,10 @@ import android.util.Base64;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
+
 import com.firebase.client.Firebase;
 import java.io.ByteArrayOutputStream;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
