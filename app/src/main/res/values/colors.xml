@@ -4,4 +4,7 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
     <color name="navbar_bg">#535353</color>
+
+    <color name="dueller_purple">#94569b</color>
+    <color name="dueller_yellow">#ffed4e</color>
 </resources>

@@ -396,7 +396,7 @@ public class MainBoardActivity extends AppCompatActivity implements GestureDetec
     }
 
     public void onClickCreate(View view) {
-        Intent intent = new Intent(MainBoardActivity.this, CreateActivity.class);
+        Intent intent = new Intent(MainBoardActivity.this, BragFormActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
