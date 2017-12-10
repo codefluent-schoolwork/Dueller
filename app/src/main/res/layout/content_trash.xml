@@ -6,16 +6,16 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.ivchen.flyershare.TrashActivity"
-    android:background="@drawable/trash_page">
+    android:background="@drawable/following_dueller">
 
     <TextView
+        android:id="@+id/existText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="No flyers available."
-        android:id="@+id/existText"
-        android:textSize="25dp"
+        android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:text="No follows available."
+        android:textSize="25dp" />
 
     <ImageButton
         android:layout_width="wrap_content"

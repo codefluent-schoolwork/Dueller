@@ -6,57 +6,59 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.ivchen.flyershare.MainActivity"
-    android:background="@drawable/login_page">
+    android:background="@drawable/login_dueller">
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/usernameField"
-        android:layout_marginTop="190dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/passwordField"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp"
+        android:layout_marginLeft="94dp"
+        android:layout_marginStart="94dp"
         android:background="#ffffff"
         android:hint="username / email"
-        android:textAlignment="center"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:textAlignment="center" />
 
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
         android:id="@+id/passwordField"
-        android:layout_below="@+id/usernameField"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="23dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/loginButton"
+        android:layout_alignLeft="@+id/usernameField"
+        android:layout_alignStart="@+id/usernameField"
+        android:layout_marginBottom="22dp"
         android:background="#ffffff"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
+        android:ems="10"
         android:hint="password"
+        android:inputType="textPassword"
         android:textAlignment="center" />
 
     <Button
+        android:id="@+id/loginButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:id="@+id/loginButton"
-        android:layout_marginTop="32dp"
-        android:layout_below="@+id/passwordField"
         android:layout_alignLeft="@+id/passwordField"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/passwordField"
-        android:onClick="onClickLogin"/>
+        android:layout_marginBottom="74dp"
+        android:onClick="onClickLogin"
+        android:text="Login" />
 
     <Button
+        android:id="@+id/signUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign-Up"
-        android:id="@+id/signUpButton"
+        android:layout_alignBaseline="@+id/loginButton"
+        android:layout_alignBottom="@+id/loginButton"
+        android:layout_marginLeft="15dp"
+        android:layout_toEndOf="@+id/loginButton"
+        android:layout_toRightOf="@+id/loginButton"
+        android:onClick="onClickSignUp"
         android:paddingRight="10dp"
-        android:layout_alignTop="@+id/loginButton"
-        android:layout_alignRight="@+id/passwordField"
-        android:layout_alignEnd="@+id/passwordField"
-        android:onClick="onClickSignUp"/>
+        android:text="Sign-Up" />
 
 </RelativeLayout>

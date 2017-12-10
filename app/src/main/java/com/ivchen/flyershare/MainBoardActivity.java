@@ -28,6 +28,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -78,13 +79,13 @@ public class MainBoardActivity extends AppCompatActivity implements GestureDetec
         gestureDetector.setOnDoubleTapListener(this);
         detector = new GestureDetector(this, new SwipeGestureDetector());
 
-        GridView gridview = (GridView) findViewById(R.id.gridview);
+        ListView listView = (ListView) findViewById(R.id.listView);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,R.layout.listitem,mThumbIds2);
-        gridview.setAdapter(adapter);
-        registerForContextMenu(gridview);
-        gridview.setAdapter(new ImageAdapter(this));
+        listView.setAdapter(adapter);
+        registerForContextMenu(listView);
+        listView.setAdapter(new ImageAdapter(this));
 
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View v,
                                     int position, long id) {
@@ -99,7 +100,7 @@ public class MainBoardActivity extends AppCompatActivity implements GestureDetec
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo){
         String [] mThumbIds2 = new String [mThumbIds.length];
-        if(v.getId() == R.id.gridview){
+        if(v.getId() == R.id.listView){
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
             menu.setHeaderTitle(mThumbIds2[info.position]);
             String[] menuItems = getResources().getStringArray(R.array.menu);
@@ -118,8 +119,8 @@ public class MainBoardActivity extends AppCompatActivity implements GestureDetec
         String menuItemName = menuItems[menuItemIndex];
         String listItemName = mThumbIds2[info.position];
 
-        TextView text = (TextView) findViewById(R.id.footer);
-        text.setText(String.format("Selected %s for item %s", menuItemName, listItemName));
+        //TextView text = (TextView) findViewById(R.id.footer);
+        //text.setText(String.format("Selected %s for item %s", menuItemName, listItemName));
         return true;
     }
 
@@ -178,7 +179,7 @@ public class MainBoardActivity extends AppCompatActivity implements GestureDetec
             final Point globalOffset = new Point();
 
             thumbView.getGlobalVisibleRect(startBounds);
-            findViewById(R.id.gridview).getGlobalVisibleRect(finalBounds,globalOffset);
+            findViewById(R.id.listView).getGlobalVisibleRect(finalBounds,globalOffset);
 
             startBounds.offset(-globalOffset.x, -globalOffset.y);
             finalBounds.offset(-globalOffset.x, -globalOffset.y);
