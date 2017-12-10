@@ -1,5 +1,6 @@
 package com.ivchen.flyershare;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.*;
@@ -31,5 +32,11 @@ public class BragFormActivity extends AppCompatActivity implements AdapterView.O
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
         // TODO Auto-generated method stub
+    }
+
+    public void onClickHome(View view) {
+        Intent intent = new Intent(BragFormActivity.this, MainBoardActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
