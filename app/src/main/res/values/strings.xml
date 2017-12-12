@@ -7,4 +7,16 @@
     <string name="title_activity_trash">TrashActivity</string>
     <string name="title_activity_signup">Sign-Up</string>
     <string name="footer">footer</string>
+
+    <string name="back">Back</string>
+    <string name="VS">VS.</string>
+    <string name="challenger1_label">Challenger 1</string>
+    <string name="challenger2_label">Challenger 2</string>
+    <string name="details">Details:</string>
+    <string name="comments">Comments:</string>
+    <string name="comment_placeholder">Start talking trash here...</string>
+    <string name="submit">Submit</string>
+    <string name="bragging_claim_label">I claim bragging rights for...</string>
+    <string name="location">Location:</string>
+    <string name="post">Post</string>
 </resources>

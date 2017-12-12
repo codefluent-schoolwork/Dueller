@@ -44,25 +44,28 @@
         android:layout_marginBottom="5dp">
 
         <ImageButton
-            android:id="@+id/createNewButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="45dp"
-            android:layout_toLeftOf="@+id/favoriteButton"
-            android:src="@drawable/makeclaim"
-            android:background="@null"
-            android:onClick="onClickCreate"/>
-
-        <ImageButton
             android:id="@+id/favoriteButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/spectate2"
             android:background="@null"
-            android:onClick="onClickTrash"/>
+            android:onClick="onClickTrash"
+            android:src="@drawable/spectate2" />
+
+        <ImageButton
+            android:id="@+id/createNewButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/helpButton"
+            android:layout_alignStart="@+id/helpButton"
+            android:layout_alignTop="@+id/navbar"
+            android:layout_marginLeft="64dp"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="14dp"
+            android:background="@null"
+            android:onClick="onClickCreate"
+            android:src="@drawable/makeclaim" />
 
         <ImageButton
             android:id="@+id/trashButton"
@@ -71,9 +74,9 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="45dp"
             android:layout_toRightOf="@+id/favoriteButton"
-            android:src="@drawable/trash"
             android:background="@null"
-            android:onClick="onClickTrash"/>
+            android:onClick="onClickTrash"
+            android:src="@drawable/trash" />
 
     </RelativeLayout>
 
@@ -82,7 +85,9 @@
         android:id="@+id/expanded_image"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:contentDescription="@string/app_name"
         android:visibility="invisible" />
 

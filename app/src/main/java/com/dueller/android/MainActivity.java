@@ -98,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void updateUI(FirebaseUser user, Task<AuthResult> task) {
+        /* if user is not null, then change to the main view page.
+        *  only happens if the phone save the user login in cache or
+        *  logged in through the provided text fields and button.
+        */
         if (user != null) {
             Intent intent = new Intent(MainActivity.this, MainBoardActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
