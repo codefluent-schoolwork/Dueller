@@ -7,11 +7,15 @@ android {
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/LICENSE-FIREBASE.txt'
         exclude 'META-INF/NOTICE'
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/NOTICE.txt'
+
     }
 
     defaultConfig {
         applicationId "com.dueller.android"
         minSdkVersion 14
+        multiDexEnabled true
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"

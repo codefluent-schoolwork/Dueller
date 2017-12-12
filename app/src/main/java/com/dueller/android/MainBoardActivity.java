@@ -4,6 +4,7 @@ package com.dueller.android;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,28 +14,42 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.ListenerRegistration;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.List;
 
+import butterknife.BindView;
+
 
 public class MainBoardActivity extends AppCompatActivity implements DuelAdapter.OnDuelSelectedListener {
 
+    @BindView(R.id.userVs)
+    TextView mUserVs;
+
+    @BindView(R.id.skill)
+    TextView mSkill;
+
+    @BindView(R.id.recycler_duels)
+    RecyclerView mDuelsRecycler;
+
+
     private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
     private Query mQuery;
+    private DocumentReference mDuelRef;
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
-
+    private DuelAdapter mDuelAdapter;
 
 
     @Override
@@ -43,19 +58,33 @@ public class MainBoardActivity extends AppCompatActivity implements DuelAdapter.
         setContentView(R.layout.activity_main_board);
 
 
+        // Enable Firestore logging
+        FirebaseFirestore.setLoggingEnabled(true);
+
+
         mQuery = mFirestore.collection("duel");
 
-        // Setting up Recycler View
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_duels);
-        mRecyclerView.setHasFixedSize(true);
+        // RecyclerView
+        mDuelAdapter = new DuelAdapter(mQuery, this) {
+            @Override
+            protected void onDataChanged() {
+                // Show/hide content if the query returns empty.
+                if (getItemCount() == 0) {
+                    mDuelsRecycler.setVisibility(View.GONE);
+                } else {
+                    mDuelsRecycler.setVisibility(View.VISIBLE);
+                }
+            }
 
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
+            @Override
+            protected void onError(FirebaseFirestoreException e) {
+                Toast.makeText(MainBoardActivity.this, "Error occurred. Check logs for info.",
+                        Toast.LENGTH_SHORT).show();
+            }
+        };
 
-        // Setting up Adapter
-        mAdapter = new DuelAdapter();
-        mRecyclerView.setAdapter(mAdapter);
-
+        mDuelsRecycler.setLayoutManager(new LinearLayoutManager(this));
+        mDuelsRecycler.setAdapter(mDuelAdapter);
 
 
     }
@@ -91,7 +120,7 @@ public class MainBoardActivity extends AppCompatActivity implements DuelAdapter.
     public void onDuelSelected(DocumentSnapshot duel) {
         // Go to the details page for the selected restaurant
         Intent intent = new Intent(this, DuelDetailsActivity.class);
-        intent.putExtra(DuelDetailsActivity.KEY_RESTAURANT_ID, duel.getId());
+        intent.putExtra(DuelDetailsActivity.KEY_DUEL_ID, duel.getId());
 
         startActivity(intent);
         overridePendingTransition(R.anim.slide_in_from_right, R.anim.slide_out_to_left);

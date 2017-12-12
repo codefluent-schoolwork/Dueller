@@ -8,6 +8,8 @@ import android.widget.*;
 
 public class DuelDetailsActivity extends AppCompatActivity {
 
+    public static final String KEY_DUEL_ID = "key_duel_id";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
