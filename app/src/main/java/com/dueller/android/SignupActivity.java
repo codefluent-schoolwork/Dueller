@@ -127,20 +127,31 @@ public class SignupActivity extends AppCompatActivity {
         String email = emailEditText.getText().toString().trim();
         String password = passwordEditText.getText().toString().trim();
 
-        mFirebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
-                            updateUI(user, task);
-                            Toast.makeText(SignupActivity.this, "Signup succeeded.",
-                                    Toast.LENGTH_SHORT).show();
-                        } else {
-                            updateUI(null, task);
+        if (email.isEmpty() || password.isEmpty() || name.isEmpty()) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(SignupActivity.this);
+            builder.setMessage("Please fill in all of the fields.")
+                    .setTitle("Sign up failed" )
+                    .setPositiveButton(android.R.string.ok, null);
+
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        } else {
+            mFirebaseAuth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                                updateUI(user, task);
+                                Toast.makeText(SignupActivity.this, "Signup succeeded.",
+                                        Toast.LENGTH_SHORT).show();
+                            } else {
+                                updateUI(null, task);
+                            }
                         }
-                    }
-                });
+                    });
+        }
+
     }
 
     private void updateUI(FirebaseUser user, Task<AuthResult> task) {

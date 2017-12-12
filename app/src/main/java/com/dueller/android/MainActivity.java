@@ -72,23 +72,33 @@ public class MainActivity extends AppCompatActivity {
         String email = usernameField.getText().toString().trim();
         String password = passwordField.getText().toString().trim();
 
+        if (email.isEmpty() || password.isEmpty()) {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage("Please fill in the credentials via the text fields.")
+                    .setTitle("Login Error.")
+                    .setPositiveButton(android.R.string.ok, null);
 
-        mFirebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
-                            Toast.makeText(MainActivity.this, "Login succeeded.",
-                                    Toast.LENGTH_SHORT).show();
-                            updateUI(user, null);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        } else {
 
-                        } else {
-                            updateUI(null, task);
+            mFirebaseAuth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                                Toast.makeText(MainActivity.this, "Login succeeded.",
+                                        Toast.LENGTH_SHORT).show();
+                                updateUI(user, null);
 
+                            } else {
+                                updateUI(null, task);
+
+                            }
                         }
-                    }
-                });
+                    });
+        }
     }
 
     public void onClickSignUp(View view) {
