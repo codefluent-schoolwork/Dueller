@@ -41,16 +41,16 @@
         android:ems="9"
         android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/uploadFlyerButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/signupButton"
-        android:layout_alignLeft="@+id/signupButton"
-        android:layout_alignStart="@+id/signupButton"
-        android:layout_marginBottom="10dp"
-        android:onClick="onClickbuttonUpload"
-        android:text="Upload" />
+    <!--<Button-->
+        <!--android:id="@+id/uploadFlyerButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_above="@+id/signupButton"-->
+        <!--android:layout_alignLeft="@+id/signupButton"-->
+        <!--android:layout_alignStart="@+id/signupButton"-->
+        <!--android:layout_marginBottom="10dp"-->
+        <!--android:onClick="onClickbuttonUpload"-->
+        <!--android:text="Upload" />-->
 
     <Button
         android:id="@+id/signupButton"

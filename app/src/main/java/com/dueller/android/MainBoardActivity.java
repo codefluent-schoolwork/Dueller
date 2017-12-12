@@ -57,7 +57,11 @@ public class MainBoardActivity extends AppCompatActivity implements DuelAdapter.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_board);
 
+    }
 
+    @Override
+    public void onStart() {
+        super.onStart();
         // Enable Firestore logging
         FirebaseFirestore.setLoggingEnabled(true);
 
@@ -83,10 +87,8 @@ public class MainBoardActivity extends AppCompatActivity implements DuelAdapter.
             }
         };
 
-        mDuelsRecycler.setLayoutManager(new LinearLayoutManager(this));
-        mDuelsRecycler.setAdapter(mDuelAdapter);
-
-
+//        mDuelsRecycler.setLayoutManager(new LinearLayoutManager(this));
+//        mDuelsRecycler.setAdapter(mDuelAdapter);
     }
 
     @Override
