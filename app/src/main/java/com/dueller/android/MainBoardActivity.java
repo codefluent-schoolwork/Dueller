@@ -31,15 +31,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 
 public class MainBoardActivity extends AppCompatActivity implements DuelAdapter.OnDuelSelectedListener {
-
-    @BindView(R.id.userVs)
-    TextView mUserVs;
-
-    @BindView(R.id.skill)
-    TextView mSkill;
 
     @BindView(R.id.recycler_duels)
     RecyclerView mDuelsRecycler;
@@ -56,12 +51,8 @@ public class MainBoardActivity extends AppCompatActivity implements DuelAdapter.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_board);
+        ButterKnife.bind(this);
 
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
         // Enable Firestore logging
         FirebaseFirestore.setLoggingEnabled(true);
 
@@ -87,9 +78,21 @@ public class MainBoardActivity extends AppCompatActivity implements DuelAdapter.
             }
         };
 
-//        mDuelsRecycler.setLayoutManager(new LinearLayoutManager(this));
-//        mDuelsRecycler.setAdapter(mDuelAdapter);
+        mDuelsRecycler.setLayoutManager(new LinearLayoutManager(this));
+        mDuelsRecycler.setAdapter(mDuelAdapter);
+
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        // Start listening for Firestore updates
+        if (mDuelAdapter != null) {
+            mDuelAdapter.startListening();
+        }
+    }
+
 
     @Override
     public boolean onContextItemSelected(MenuItem item) {

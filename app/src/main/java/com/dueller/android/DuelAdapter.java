@@ -81,7 +81,7 @@ public class DuelAdapter extends FirestoreAdapter<DuelAdapter.ViewHolder> {
 
             // hopefully array contains 2 users
             // but if not have a backup.
-            if (users.length == 2) {
+            if (users != null && users.length == 2) {
                 userVsText = users[0] + " VS " + users[1];
             } else {
                 userVsText = "Dueller vs Dueller";
