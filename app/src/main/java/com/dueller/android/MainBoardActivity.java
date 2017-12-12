@@ -18,36 +18,30 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
+
+import java.util.List;
 
 
 public class MainBoardActivity extends AppCompatActivity {
 
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+    private FirebaseFirestore mFirestore = FirebaseFirestore.getInstance();
+    private Query mQuery;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_board);
 
-        ListView listView = (ListView) findViewById(R.id.listView);
-//        ArrayAdapter<String> adapter =
-//        listView.setAdapter(adapter);
 
-        db.collection("duel")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (DocumentSnapshot document : task.getResult()) {
-                                Log.d("Success", document.getId() + " => " + document.getData());
-                            }
-                        } else {
-                            Log.w("WTF", "Error getting documents.", task.getException());
-                        }
-                    }
-                });
+        mQuery = mFirestore.collection("duel");
+
+        ListView listView = (ListView) findViewById(R.id.listView);
+
+
+
 
     }
 
