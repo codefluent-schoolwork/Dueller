@@ -9,16 +9,14 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+//
+//import com.firebase.client.DataSnapshot;
+//import com.firebase.client.Firebase;
+//import com.firebase.client.FirebaseError;
+//import com.firebase.client.ValueEventListener;
 
-import com.firebase.client.DataSnapshot;
-import com.firebase.client.Firebase;
-import com.firebase.client.FirebaseError;
-import com.firebase.client.ValueEventListener;
 
 
-/**
- * Created by Owner on 4/9/2016.
- */
 public class ImageAdapter extends BaseAdapter {
 
 
@@ -53,57 +51,61 @@ public class ImageAdapter extends BaseAdapter {
         return 0;
     }
 
-    // create a new ImageView for each item referenced by the Adapter
     public View getView(int position, View convertView, ViewGroup parent) {
+        return null;
+    }
 
-        if (convertView == null) {
-            // if it's not recycled, initialize some attributes
-            imageView = new ImageView(mContext);
-            imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setPadding(8, 8, 8, 8);
-        } else {
-            imageView = (ImageView) convertView;
-        }
-
-
-
+    // create a new ImageView for each item referenced by the Adapter
+//    public View getView(int position, View convertView, ViewGroup parent) {
+//
+//        if (convertView == null) {
+//            // if it's not recycled, initialize some attributes
+//            imageView = new ImageView(mContext);
+//            imageView.setLayoutParams(new GridView.LayoutParams(250, 250));
+//            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+//            imageView.setPadding(8, 8, 8, 8);
+//        } else {
+//            imageView = (ImageView) convertView;
+//        }
+//
+//
+//
 
         //setting up array for images extracted from database
-        Firebase ref = new Firebase("https://flyershare.firebaseio.com/posts");
-        ref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot snapshot) {
-                long flyerCount = snapshot.getChildrenCount();
-                int flyerCountInt = (int) flyerCount;
-                imagesDecoded = new Bitmap[flyerCountInt];
-                //images = new String[flyerCountInt];
-                //int j = 0;
-                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
-                    Flyer post = postSnapshot.getValue(Flyer.class);
-                    holdsImage = post.getTitle();
-                    //turnImageStringToImages(holdsImage);
-                    byte[] decodedString = Base64.decode(holdsImage, Base64.DEFAULT);
-                    Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
-                    imagesDecoded[i] = decodedByte;
-                    i++;
-                    //j++;
-
-
-                }
-            }
-            @Override
-            public void onCancelled(FirebaseError firebaseError) {
-                System.out.println("The read failed: " + firebaseError.getMessage());
-            }
-        });
-
-
-
-
-        imageView.setImageBitmap(imagesDecoded[position]);
-        return imageView;
-    }
+//        Firebase ref = new Firebase("https://flyershare.firebaseio.com/posts");
+//        ref.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot snapshot) {
+//                long flyerCount = snapshot.getChildrenCount();
+//                int flyerCountInt = (int) flyerCount;
+//                imagesDecoded = new Bitmap[flyerCountInt];
+//                //images = new String[flyerCountInt];
+//                //int j = 0;
+//                for (DataSnapshot postSnapshot: snapshot.getChildren()) {
+//                    Flyer post = postSnapshot.getValue(Flyer.class);
+//                    holdsImage = post.getTitle();
+//                    //turnImageStringToImages(holdsImage);
+//                    byte[] decodedString = Base64.decode(holdsImage, Base64.DEFAULT);
+//                    Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+//                    imagesDecoded[i] = decodedByte;
+//                    i++;
+//                    //j++;
+//
+//
+//                }
+//            }
+//            @Override
+//            public void onCancelled(FirebaseError firebaseError) {
+//                System.out.println("The read failed: " + firebaseError.getMessage());
+//            }
+//        });
+//
+//
+//
+//
+//        imageView.setImageBitmap(imagesDecoded[position]);
+//        return imageView;
+//    }
 
 
 

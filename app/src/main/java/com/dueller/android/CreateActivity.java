@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.firebase.client.Firebase;
+//import com.firebase.client.Firebase;
 import java.io.ByteArrayOutputStream;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +33,7 @@ public class CreateActivity extends AppCompatActivity   {
     protected void onCreate(Bundle savedInstanceState)  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
-        Firebase.setAndroidContext(this);
+//        Firebase.setAndroidContext(this);
 
 
         image = (ImageView) findViewById(R.id.imageView2);
@@ -86,14 +86,14 @@ public class CreateActivity extends AppCompatActivity   {
                byte[] byteArray = bYtE.toByteArray();
                String imageFile = Base64.encodeToString(byteArray, Base64.DEFAULT);
 
-               Firebase ref = new Firebase("https://flyershare.firebaseio.com");
-               Firebase postRef = ref.child("posts");
-               Map<String, String> flyer = new HashMap<String, String>();
-               flyer.put("image", imageFile);
-               flyer.put("date", editDate);
-               flyer.put("title", editTitle);
-               flyer.put("school", editSchool);
-               postRef.push().setValue(flyer);
+//               Firebase ref = new Firebase("https://flyershare.firebaseio.com");
+//               Firebase postRef = ref.child("posts");
+//               Map<String, String> flyer = new HashMap<String, String>();
+//               flyer.put("image", imageFile);
+//               flyer.put("date", editDate);
+//               flyer.put("title", editTitle);
+//               flyer.put("school", editSchool);
+//               postRef.push().setValue(flyer);
 
                Toast.makeText(CreateActivity.this, "Uploading . . .", Toast.LENGTH_SHORT).show();
            }else{

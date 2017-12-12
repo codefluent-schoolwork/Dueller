@@ -19,7 +19,7 @@
         android:layout_marginLeft="94dp"
         android:layout_marginStart="94dp"
         android:background="#ffffff"
-        android:hint="username / email"
+        android:hint="email"
         android:singleLine="true"
         android:textAlignment="center" />
 

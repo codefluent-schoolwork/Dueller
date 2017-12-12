@@ -2,24 +2,45 @@ package com.dueller.android;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 import android.widget.Toast;
 
-
-
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class MainActivity extends AppCompatActivity {
 
+    private FirebaseAuth mFirebaseAuth = FirebaseAuth.getInstance();
+
+    protected EditText usernameField;
+    protected EditText passwordField;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        mFirebaseAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_main);
 
     }
+//
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mFirebaseAuth.getCurrentUser();
+//        updateUI(currentUser, null);
+//    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -45,37 +66,51 @@ public class MainActivity extends AppCompatActivity {
 
     public void onClickLogin(View view) {
 
+        usernameField = (EditText) findViewById(R.id.usernameField);
+        passwordField = (EditText) findViewById(R.id.passwordField);
+
+        String email = usernameField.getText().toString().trim();
+        String password = passwordField.getText().toString().trim();
 
 
-        //log in info hardcoded in, delete these two lines and uncomment the others to allow
-        //actual authentication
-        String userInput = "flyershareofficial@gmail.com";
-        String passwordInput = "apps4998";
-        /*EditText txtDescription =
-                (EditText) findViewById(R.id.usernameField);
-        String userInput = txtDescription.getText().toString();
-        txtDescription =
-                (EditText) findViewById(R.id.passwordField);
-        String passwordInput = txtDescription.getText().toString();*/
-        ref.authWithPassword(userInput, passwordInput, new Firebase.AuthResultHandler() {
-            @Override
-            public void onAuthenticated(AuthData authData) {
-                System.out.println("User ID: " + authData.getUid() + ", Provider: " + authData.getProvider());
-                Intent intent = new Intent(MainActivity.this, MainBoardActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-            @Override
-            public void onAuthenticationError(FirebaseError firebaseError) {
-                Toast.makeText(getApplicationContext(), "Error with user credentials.", Toast.LENGTH_LONG).show();
-            }
-        });
+        mFirebaseAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mFirebaseAuth.getCurrentUser();
+                            Toast.makeText(MainActivity.this, "Login succeeded.",
+                                    Toast.LENGTH_SHORT).show();
+                            updateUI(user, null);
+
+                        } else {
+                            updateUI(null, task);
+
+                        }
+                    }
+                });
     }
 
     public void onClickSignUp(View view) {
-        Intent intent = new Intent(MainActivity.this, signup.class);
+        Intent intent = new Intent(MainActivity.this, SignupActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    private void updateUI(FirebaseUser user, Task<AuthResult> task) {
+        if (user != null) {
+            Intent intent = new Intent(MainActivity.this, MainBoardActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(intent);
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+            builder.setMessage(task.getException().getMessage())
+                    .setTitle("Authentication failed.")
+                    .setPositiveButton(android.R.string.ok, null);
+            AlertDialog dialog = builder.create();
+            dialog.show();
+        }
     }
 
 

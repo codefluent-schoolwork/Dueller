@@ -29,7 +29,7 @@ import android.view.MotionEvent;
 import android.view.GestureDetector;
 import android.support.v4.view.GestureDetectorCompat;
 
-import com.firebase.client.Firebase;
+//import com.firebase.client.Firebase;
 
 public class MainBoardActivity extends AppCompatActivity implements GestureDetector.OnGestureListener,
         GestureDetector.OnDoubleTapListener{
@@ -373,8 +373,8 @@ public class MainBoardActivity extends AppCompatActivity implements GestureDetec
         Toast.makeText(MainBoardActivity.this, "Logging out . . .", Toast.LENGTH_SHORT).show();
 
         //log-out code
-        Firebase ref = new Firebase("https://flyershare.firebaseio.com");
-        ref.unauth();
+//        Firebase ref = new Firebase("https://flyershare.firebaseio.com");
+//        ref.unauth();
 
         //intent for page navigation
         Intent intent = new Intent(MainBoardActivity.this, MainActivity.class);

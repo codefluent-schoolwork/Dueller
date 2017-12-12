@@ -50,7 +50,7 @@
             android:label="@string/title_activity_trash"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".signup"
+            android:name=".SignupActivity"
             android:label="@string/title_activity_signup"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
