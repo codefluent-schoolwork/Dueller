@@ -17,16 +17,6 @@
         android:layout_marginBottom="5dp">
 
         <ImageButton
-            android:id="@+id/favoriteButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:background="@null"
-            android:onClick="onClickTrash"
-            android:src="@drawable/spectate2" />
-
-        <ImageButton
             android:id="@+id/createNewButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -41,15 +31,25 @@
             android:src="@drawable/makeclaim" />
 
         <ImageButton
-            android:id="@+id/trashButton"
+            android:id="@+id/favoriteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@null"
+            android:onClick="onClickFavorite"
+            android:src="@drawable/spectate2" />
+
+        <ImageButton
+            android:id="@+id/faq"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="45dp"
             android:layout_toRightOf="@+id/favoriteButton"
             android:background="@null"
-            android:onClick="onClickTrash"
-            android:src="@drawable/trash" />
+            android:onClick="onClickFaq"
+            android:src="@drawable/faq" />
 
     </RelativeLayout>
 

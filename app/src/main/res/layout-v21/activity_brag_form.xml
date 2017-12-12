@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ivchen.flyershare.BragFormActivity"
+    tools:context=".BragFormActivity"
     android:background="@drawable/create_dueller">
 
     <Spinner
@@ -53,6 +53,7 @@
         android:background="@color/dueller_purple"
         android:elevation="5dp"
         android:fontFamily="sans-serif-smallcaps"
+        android:onClick="onClickPost"
         android:text="@string/post"
         android:textColor="@android:color/white"
         android:textSize="18sp"

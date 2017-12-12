@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context="com.dueller.android.FavoritesActivity"
     tools:showIn="@layout/activity_favorites"
-    android:background="@drawable/favorite_page">
+    android:background="@drawable/following_dueller">
 
     <TextView
         android:layout_width="wrap_content"

@@ -34,7 +34,6 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mFirebaseAuth = FirebaseAuth.getInstance();
         setContentView(R.layout.activity_signup);
-
     }
 
 //    @Override
@@ -156,7 +155,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user, Task<AuthResult> task) {
         if (user != null) {
-            Intent intent = new Intent(SignupActivity.this, MainBoardActivity.class);
+            Intent intent = new Intent(SignupActivity.this, SignupConfirmActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);

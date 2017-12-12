@@ -8,7 +8,15 @@ import android.widget.*;
 
 import com.dueller.android.MainBoardActivity;
 
+/*
+    TODO:
+        - Add skill to user in database
+        - Add location to skill in database
+        - Add picture to Firestore and add field
+*/
+
 public class BragFormActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
     String[] skillsList = {"Everything", "Mario Kart", "Super Smash Bros.", "Thumb Wrestling", "Football", "Dancing", "Chess", "Yu-Gi-Oh", "League of Legends", "Call of Duty", "Running", "Arm Wrestling"};
 
     @Override
@@ -40,5 +48,12 @@ public class BragFormActivity extends AppCompatActivity implements AdapterView.O
         Intent intent = new Intent(BragFormActivity.this, MainBoardActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    public void onClickPost(View view) {
+        Intent intent = new Intent(BragFormActivity.this, MainBoardActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+
     }
 }

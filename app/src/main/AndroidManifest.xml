@@ -35,10 +35,6 @@
             android:label="@string/title_activity_favorites"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".CreateActivity"
-            android:label="@string/title_activity_create"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".TrashActivity"
             android:label="@string/title_activity_trash"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -54,13 +50,20 @@
         <activity
             android:name=".BragFormActivity"
             android:label="BragFormActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DuelDetailsActivity"
             android:label="DuelDetailsActivity"
-            android:windowSoftInputMode="stateHidden"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
+            android:name=".SignupConfirmActivity"
+            android:label="SignupConfirmActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".FaqActivity"
+            android:label="FaqActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
