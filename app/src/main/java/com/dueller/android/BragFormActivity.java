@@ -33,7 +33,7 @@ public class BragFormActivity extends AppCompatActivity implements AdapterView.O
 
     @Override
     public void onNothingSelected(AdapterView<?> arg0) {
-        // TODO Auto-generated method stub
+
     }
 
     public void onClickHome(View view) {
